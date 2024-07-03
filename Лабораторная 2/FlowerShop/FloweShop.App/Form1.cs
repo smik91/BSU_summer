@@ -1,6 +1,6 @@
 using FloweShop.App.Models;
 using Microsoft.EntityFrameworkCore;
-
+using FloweShop.App.Data;
 namespace FloweShop.App
 {
     public partial class Form1 : Form
@@ -15,6 +15,12 @@ namespace FloweShop.App
             LoadCompositionFlowerData();
             LoadUserData();
             LoadOrderData();
+        }
+
+        // Constructor for tests
+        public Form1(AppDbContext context)
+        {
+            _context = context;
         }
 
         private void LoadUserData()
@@ -56,7 +62,7 @@ namespace FloweShop.App
             }
             LoadCompositionFlowerData();
         }
-        private void LoadFlowersData()
+        public void LoadFlowersData()
         {
             dataGridView1.Rows.Clear();
             var flowers = _context.Flowers.AsNoTracking().ToList();
@@ -545,7 +551,7 @@ namespace FloweShop.App
             LoadCompositionData();
             MessageBox.Show("Количество цветков в композиции успешно обновлено.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private bool ValidatePassword(string password)
+        public bool ValidatePassword(string password)
         {
             if (password.Length < 8)
                 return false;

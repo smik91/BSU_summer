@@ -1404,7 +1404,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        public DataGridView dataGridView1;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;

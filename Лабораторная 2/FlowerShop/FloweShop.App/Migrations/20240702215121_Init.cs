@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-
+using FloweShop.App.Data;
 #nullable disable
 
 namespace FloweShop.App.Migrations
