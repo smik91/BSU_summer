@@ -6,7 +6,7 @@ using FloweShop.App;
 namespace FloweShop.Test
 {
     [TestFixture]
-    public class Form1Tests
+    public class PasswordTests
     {
         private Mock<AppDbContext> mockContext;
         private Form1 form;
