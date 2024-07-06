@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BtnMove = new Button();
+            BtnConnector = new Button();
             BtnSave = new Button();
             BtnClear = new Button();
-            BtnLine = new Button();
+            BtnTriangle = new Button();
             BtnRectangle = new Button();
             BtnEllipse = new Button();
-            BtnEraser = new Button();
-            BtnPencil = new Button();
-            BtnPaint = new Button();
-            BtnColor = new Button();
             Pic = new PictureBox();
+            BtnLoad = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Pic).BeginInit();
             SuspendLayout();
@@ -46,20 +45,56 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 224, 192);
+            panel1.Controls.Add(BtnLoad);
+            panel1.Controls.Add(BtnMove);
+            panel1.Controls.Add(BtnConnector);
             panel1.Controls.Add(BtnSave);
             panel1.Controls.Add(BtnClear);
-            panel1.Controls.Add(BtnLine);
+            panel1.Controls.Add(BtnTriangle);
             panel1.Controls.Add(BtnRectangle);
             panel1.Controls.Add(BtnEllipse);
-            panel1.Controls.Add(BtnEraser);
-            panel1.Controls.Add(BtnPencil);
-            panel1.Controls.Add(BtnPaint);
-            panel1.Controls.Add(BtnColor);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1680, 160);
+            panel1.Size = new Size(1176, 96);
             panel1.TabIndex = 0;
+            // 
+            // BtnMove
+            // 
+            BtnMove.BackColor = Color.White;
+            BtnMove.Cursor = Cursors.Hand;
+            BtnMove.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
+            BtnMove.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
+            BtnMove.FlatStyle = FlatStyle.Flat;
+            BtnMove.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            BtnMove.ForeColor = Color.Black;
+            BtnMove.Location = new Point(4, 44);
+            BtnMove.Margin = new Padding(2);
+            BtnMove.Name = "BtnMove";
+            BtnMove.Size = new Size(145, 34);
+            BtnMove.TabIndex = 12;
+            BtnMove.Text = "Двигать";
+            BtnMove.UseVisualStyleBackColor = false;
+            BtnMove.Click += BtnMove_Click;
+            // 
+            // BtnConnector
+            // 
+            BtnConnector.BackColor = Color.White;
+            BtnConnector.Cursor = Cursors.Hand;
+            BtnConnector.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
+            BtnConnector.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
+            BtnConnector.FlatStyle = FlatStyle.Flat;
+            BtnConnector.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            BtnConnector.ForeColor = Color.Black;
+            BtnConnector.Location = new Point(4, 7);
+            BtnConnector.Margin = new Padding(2);
+            BtnConnector.Name = "BtnConnector";
+            BtnConnector.Size = new Size(145, 34);
+            BtnConnector.TabIndex = 11;
+            BtnConnector.Text = "Коннектор";
+            BtnConnector.UseVisualStyleBackColor = false;
+            BtnConnector.Click += BtnConnector_Click;
             // 
             // BtnSave
             // 
@@ -70,9 +105,10 @@
             BtnSave.FlatStyle = FlatStyle.Flat;
             BtnSave.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 204);
             BtnSave.ForeColor = Color.Black;
-            BtnSave.Location = new Point(1471, 12);
+            BtnSave.Location = new Point(592, 11);
+            BtnSave.Margin = new Padding(2);
             BtnSave.Name = "BtnSave";
-            BtnSave.Size = new Size(207, 56);
+            BtnSave.Size = new Size(145, 34);
             BtnSave.TabIndex = 8;
             BtnSave.Text = "Save";
             BtnSave.UseVisualStyleBackColor = false;
@@ -87,30 +123,32 @@
             BtnClear.FlatStyle = FlatStyle.Flat;
             BtnClear.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 204);
             BtnClear.ForeColor = Color.Black;
-            BtnClear.Location = new Point(1471, 94);
+            BtnClear.Location = new Point(820, 44);
+            BtnClear.Margin = new Padding(2);
             BtnClear.Name = "BtnClear";
-            BtnClear.Size = new Size(207, 56);
+            BtnClear.Size = new Size(145, 34);
             BtnClear.TabIndex = 7;
             BtnClear.Text = "Clear";
             BtnClear.UseVisualStyleBackColor = false;
             BtnClear.Click += BtnClear_Click;
             // 
-            // BtnLine
+            // BtnTriangle
             // 
-            BtnLine.BackColor = Color.White;
-            BtnLine.BackgroundImage = Properties.Resources.line;
-            BtnLine.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnLine.Cursor = Cursors.Hand;
-            BtnLine.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
-            BtnLine.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
-            BtnLine.FlatStyle = FlatStyle.Flat;
-            BtnLine.ForeColor = Color.White;
-            BtnLine.Location = new Point(1292, 12);
-            BtnLine.Name = "BtnLine";
-            BtnLine.Size = new Size(173, 138);
-            BtnLine.TabIndex = 6;
-            BtnLine.UseVisualStyleBackColor = false;
-            BtnLine.Click += BtnLine_Click;
+            BtnTriangle.BackColor = Color.White;
+            BtnTriangle.BackgroundImage = Properties.Resources.triangle;
+            BtnTriangle.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnTriangle.Cursor = Cursors.Hand;
+            BtnTriangle.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
+            BtnTriangle.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
+            BtnTriangle.FlatStyle = FlatStyle.Flat;
+            BtnTriangle.ForeColor = Color.White;
+            BtnTriangle.Location = new Point(403, 7);
+            BtnTriangle.Margin = new Padding(2);
+            BtnTriangle.Name = "BtnTriangle";
+            BtnTriangle.Size = new Size(121, 83);
+            BtnTriangle.TabIndex = 6;
+            BtnTriangle.UseVisualStyleBackColor = false;
+            BtnTriangle.Click += BtnTriangle_Click;
             // 
             // BtnRectangle
             // 
@@ -122,9 +160,10 @@
             BtnRectangle.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
             BtnRectangle.FlatStyle = FlatStyle.Flat;
             BtnRectangle.ForeColor = Color.White;
-            BtnRectangle.Location = new Point(1113, 12);
+            BtnRectangle.Location = new Point(278, 7);
+            BtnRectangle.Margin = new Padding(2);
             BtnRectangle.Name = "BtnRectangle";
-            BtnRectangle.Size = new Size(173, 138);
+            BtnRectangle.Size = new Size(121, 83);
             BtnRectangle.TabIndex = 5;
             BtnRectangle.UseVisualStyleBackColor = false;
             BtnRectangle.Click += BtnRectangle_Click;
@@ -139,102 +178,54 @@
             BtnEllipse.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
             BtnEllipse.FlatStyle = FlatStyle.Flat;
             BtnEllipse.ForeColor = Color.White;
-            BtnEllipse.Location = new Point(934, 12);
+            BtnEllipse.Location = new Point(153, 7);
+            BtnEllipse.Margin = new Padding(2);
             BtnEllipse.Name = "BtnEllipse";
-            BtnEllipse.Size = new Size(173, 138);
+            BtnEllipse.Size = new Size(121, 83);
             BtnEllipse.TabIndex = 4;
             BtnEllipse.UseVisualStyleBackColor = false;
             BtnEllipse.Click += BtnEllipse_Click;
             // 
-            // BtnEraser
-            // 
-            BtnEraser.BackColor = Color.White;
-            BtnEraser.BackgroundImage = Properties.Resources.eraser;
-            BtnEraser.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnEraser.Cursor = Cursors.Hand;
-            BtnEraser.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
-            BtnEraser.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
-            BtnEraser.FlatStyle = FlatStyle.Flat;
-            BtnEraser.ForeColor = Color.White;
-            BtnEraser.Location = new Point(755, 12);
-            BtnEraser.Name = "BtnEraser";
-            BtnEraser.Size = new Size(173, 138);
-            BtnEraser.TabIndex = 3;
-            BtnEraser.UseVisualStyleBackColor = false;
-            BtnEraser.Click += BtnEraser_Click;
-            // 
-            // BtnPencil
-            // 
-            BtnPencil.BackColor = Color.White;
-            BtnPencil.BackgroundImage = Properties.Resources.pencil;
-            BtnPencil.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnPencil.Cursor = Cursors.Hand;
-            BtnPencil.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
-            BtnPencil.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
-            BtnPencil.FlatStyle = FlatStyle.Flat;
-            BtnPencil.ForeColor = Color.White;
-            BtnPencil.Location = new Point(576, 12);
-            BtnPencil.Name = "BtnPencil";
-            BtnPencil.Size = new Size(173, 138);
-            BtnPencil.TabIndex = 2;
-            BtnPencil.UseVisualStyleBackColor = false;
-            BtnPencil.Click += BtnPencil_Click;
-            // 
-            // BtnPaint
-            // 
-            BtnPaint.BackColor = Color.White;
-            BtnPaint.BackgroundImage = Properties.Resources.paint;
-            BtnPaint.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnPaint.Cursor = Cursors.Hand;
-            BtnPaint.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
-            BtnPaint.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
-            BtnPaint.FlatStyle = FlatStyle.Flat;
-            BtnPaint.ForeColor = Color.White;
-            BtnPaint.Location = new Point(397, 12);
-            BtnPaint.Name = "BtnPaint";
-            BtnPaint.Size = new Size(173, 138);
-            BtnPaint.TabIndex = 1;
-            BtnPaint.UseVisualStyleBackColor = false;
-            BtnPaint.Click += BtnPaint_Click;
-            // 
-            // BtnColor
-            // 
-            BtnColor.BackColor = Color.White;
-            BtnColor.BackgroundImage = Properties.Resources.color_wheel;
-            BtnColor.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnColor.Cursor = Cursors.Hand;
-            BtnColor.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
-            BtnColor.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
-            BtnColor.FlatStyle = FlatStyle.Flat;
-            BtnColor.ForeColor = Color.White;
-            BtnColor.Location = new Point(218, 12);
-            BtnColor.Name = "BtnColor";
-            BtnColor.Size = new Size(173, 138);
-            BtnColor.TabIndex = 0;
-            BtnColor.UseVisualStyleBackColor = false;
-            BtnColor.Click += BtnColor_Click;
-            // 
             // Pic
             // 
             Pic.Dock = DockStyle.Fill;
-            Pic.Location = new Point(0, 160);
+            Pic.Location = new Point(0, 96);
+            Pic.Margin = new Padding(2);
             Pic.Name = "Pic";
-            Pic.Size = new Size(1680, 822);
+            Pic.Size = new Size(1176, 493);
             Pic.TabIndex = 1;
             Pic.TabStop = false;
             Pic.Paint += Pic_Paint;
-            Pic.MouseClick += Pic_MouseClick;
             Pic.MouseDown += Pic_MouseDown;
             Pic.MouseMove += Pic_MouseMove;
             Pic.MouseUp += Pic_MouseUp;
             // 
+            // BtnLoad
+            // 
+            BtnLoad.BackColor = Color.White;
+            BtnLoad.Cursor = Cursors.Hand;
+            BtnLoad.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 128);
+            BtnLoad.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0);
+            BtnLoad.FlatStyle = FlatStyle.Flat;
+            BtnLoad.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            BtnLoad.ForeColor = Color.Black;
+            BtnLoad.Location = new Point(592, 49);
+            BtnLoad.Margin = new Padding(2);
+            BtnLoad.Name = "BtnLoad";
+            BtnLoad.Size = new Size(145, 34);
+            BtnLoad.TabIndex = 13;
+            BtnLoad.Text = "Load";
+            BtnLoad.UseVisualStyleBackColor = false;
+            BtnLoad.Click += BtnLoad_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1680, 982);
+            ClientSize = new Size(1176, 589);
             Controls.Add(Pic);
             Controls.Add(panel1);
+            Margin = new Padding(2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Paint";
@@ -248,13 +239,12 @@
         private Panel panel1;
         private Button BtnSave;
         private Button BtnClear;
-        private Button BtnLine;
+        private Button BtnTriangle;
         private Button BtnRectangle;
         private Button BtnEllipse;
-        private Button BtnEraser;
-        private Button BtnPencil;
-        private Button BtnPaint;
-        private Button BtnColor;
         private PictureBox Pic;
+        private Button BtnMove;
+        private Button BtnConnector;
+        private Button BtnLoad;
     }
 }
